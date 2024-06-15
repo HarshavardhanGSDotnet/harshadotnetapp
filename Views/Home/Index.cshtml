@@ -1,0 +1,35 @@
+﻿@model FlamesApp.Models.FlamesModel
+
+@{
+    ViewBag.Title = "FLAMES Game";
+}
+
+<h2>FLAMES Game</h2>
+
+@using (Html.BeginForm("Result", "Flames", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.YourName)
+        @Html.TextBoxFor(m => m.YourName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.YourName, "", new { @class = "text-danger" })
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.Gender)
+        <div>
+            @Html.RadioButtonFor(m => m.Gender, "m") Male
+            @Html.RadioButtonFor(m => m.Gender, "f") Female
+        </div>
+        @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.SoulmateName)
+        @Html.TextBoxFor(m => m.SoulmateName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SoulmateName, "", new { @class = "text-danger" })
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary" />
+}
+
+

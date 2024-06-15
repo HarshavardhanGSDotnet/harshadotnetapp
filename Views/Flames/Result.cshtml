@@ -1,0 +1,15 @@
+<!-- Views/Flames/Result.cshtml -->
+@model FlamesApp.Models.FlamesModel
+
+@{
+    ViewBag.Title = "FLAMES Result";
+}
+
+<h2>FLAMES Result</h2>
+
+<p>Your Name: @Model.YourName</p>
+<p>Soulmate Name: @Model.SoulmateName</p>
+<p>Score: @Model.Score</p>
+<p>Result: @Model.Result</p>
+
+<a href="@Url.Action("Index", "Home")">Back to Form</a>
